@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sender-consumer
+  amqp:
+    deserialization:
+      trust:
+        all: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest 
+  
+    

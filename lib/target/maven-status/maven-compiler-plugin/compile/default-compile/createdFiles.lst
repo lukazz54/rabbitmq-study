@@ -1,0 +1,5 @@
+lib\dtos\SenderEmailDTO.class
+lib\dtos\UserDTO.class
+lib\rabbitmq\config\RabbitContants.class
+lib\documents\User.class
+lib\exception\entity\ExceptionError.class

@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./docker-conf/rabbitmp/data/:/var/lib/rabbitmq/
+      - ./docker-conf/rabbitmp/log/:/var/log/rabbitmq
+    networks:
+      - rabbitmq_curso
+  mongo:
+    image: mongo:4.4
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: teste
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - rabbitmq_curso
+      
+volumes:
+  mongo-data:
+  
+networks:
+  rabbitmq_curso:
+    driver: bridge
